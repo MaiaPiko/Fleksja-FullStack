@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        .content_container {
+            background-color: #d6e9be;
+            border-radius: 5px;
+            margin: 20px auto 20px auto;
+            padding: 50px;
+            line-height: 30px;
+            width: 300px;
+          }
+          
+          .blank {
+            background-color: white;
+            border-radius: 5px;
+            display: inline-block;
+            height: 12px;
+            min-width: 100px;
+            padding: 1px 5px 15px 5px;
+            position: relative;
+            text-align: center;
+            white-space: nowrap;
+          }
+          
+          .choice_cloud {
+            /* background-color: yellow; */
+            display: none;
+            left: -50%;
+            position: absolute;
+            top: 25px;
+          
+            /* http://www.theappguruz.com/tag-tools/web/CSSAnimations/ */
+            -webkit-backface-visibility: visible !important;
+            backface-visibility: visible !important;
+            -webkit-animation-name: flipInX;
+            animation-name: flipInX;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            }
+            @-webkit-keyframes flipInX {
+            0% {
+            -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+            opacity: 0;
+            }
+            40% {
+            -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+            }
+            60% {
+            -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+            opacity: 1;
+            }
+            80% {
+            -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            }
+            100% {
+            -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+            }
+            }
+            @keyframes flipInX {
+            0% {
+            -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+            -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+            opacity: 0;
+            }
+            40% {
+            -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+            -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+            }
+            60% {
+            -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+            opacity: 1;
+            }
+            80% {
+            -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            }
+            100% {
+            -webkit-transform: perspective(400px);
+            transform: perspective(400px);
+            }
+          }
+          
+          .choice {
+            background-color: #4A829B;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px rgba(0,0,0,.3);
+            color: white;
+            margin: 0 5px 0 0;
+            padding: 5px;
+            white-space: nowrap;
+          }
+          
+          .choice:hover {
+            background-color: #6099b3;
+          }
+          
+    </style>
+</head>
+<body>
+    <div style="background-color: #444; border-radius: 5px; color: white; margin: 40px auto 20px auto; padding: 50px; width: 300px;">
+        Click the blanks to view pop-up word choices.
+      </div>
+      <div class="content_container">
+        I would like to visit <span class="blank"><span class="text_container">&nbsp;</span><span class="choice_cloud"><span class="choice">Italy</span><span class="choice">Sweden</span><span class="choice">Switzerland</span><span class="choice">Brazil</span></span></span>. But I might need to eat before I get there.
+        The food I'd like to take with me is a(n) <span class="blank"><span class="text_container">&nbsp;</span><span class="choice_cloud"><span class="choice">Apple</span><span class="choice">Banana</span><span class="choice">Grapefruit</span><span class="choice">Cherry</span></span></span>.
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+      <script>
+
+
+var all_choices = $(".blank")
+.parent()
+.find(".choice_cloud");
+
+$(".content_container").on("click", ".blank", function() {
+event.stopPropagation(); // Prevent the 'clicking anywhere hides it' function
+all_choices.hide("slow");
+var choiceCloud = $(this).find(".choice_cloud");
+choiceCloud.toggle();
+});
+
+$(".choice").click(function(event) {
+var myChoice = $(event.target);
+var isChoice = myChoice.is(".choice");
+event.stopPropagation(); // Prevent the 'clicking anywhere hides it' function
+if (isChoice) {
+  //make sure I am a .choice element
+  myChoice.closest(".blank")
+    .find(".text_container")
+    .text(myChoice.text());
+  myChoice.parent().hide();
+}
+});
+
+// Clicking anywhere else hides it
+$(document).on("click", function() {
+$(".choice_cloud").hide("slow");
+});
+
+      </script>
+</body>
+</html>
