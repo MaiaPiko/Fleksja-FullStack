@@ -90,3 +90,12 @@ div > h3 {
 
     }
 }
+
+.contact{
+    display:flex;
+    height: 70vh;
+}
+
+.reddit-bi{
+    color:#FF5700 !important;
+}
