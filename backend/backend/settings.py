@@ -23,7 +23,7 @@ SECRET_KEY = SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://fleksja.onrender.com/']
 
 
 # Application definition
@@ -127,5 +127,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:5173',  
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'http://localhost:4173',
+    'https://fleksja.onrender.com'
+    
+      
 ]
