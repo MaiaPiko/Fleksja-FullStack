@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap');
+:root {
+   
+    --medium-grey: #808080;
+    --blue-grey: #7393B3;
+    --charcoal: #36454F;
+    --platinum: #E5E4E2;
+    --shoelace: #fffafa;
+    --seashell: #fff5ee;
+    --nav-gray: #515356;
+  }
+
+
+
+
+body {
+    background-color: var(--seashell) !important;
+  }
+
+.appfonts {
+font-family: 'Montserrat', sans-serif;
+color: var(--charcoal);}
+
+.box {
+    background-color: var(--shoelace) !important;
+}
+
+
+.navbar-brand{
+    color: var(--nav-gray) !important;
+}
+
+h1, h2, h3, p, ul, nav, li{
+    font-family: 'Montserrat', sans-serif;
+    font-size:larger;
+    color: var(--charcoal)
+
+}
+
+.drop-nav{
+    text-size: 0.5em !important;
+}
+
+
+.src{
+    font-size: small;
+    color: var(--medium-grey);
+}
+
+.instruction{
+    color: var(--blue-grey)
+}
+/* .card {
+background-color: rgb(209, 222, 235) !important;
+} */
+
+.pagination > .active > a
+{
+    color: white;
+    background-color: var(--blue-grey) !Important;
+    border: solid 1px var(--blue-grey) !Important;
+}
+
+
+.pagination > li > a
+{
+    background-color: white;
+    color: var(--charcoal);
+}
+
+
+p > a {
+    color: var(--blue-grey)
+}
+
+div > h3 {
+    text-align: center;
+    font-size: x-large ;
+}
+
+
+.container-sm {
+    width: 25% !important;
+}
+
+
+@media (max-width: 1280px) {
+    .container-sm{
+        width: 100% !important;
+
+    }
+}
