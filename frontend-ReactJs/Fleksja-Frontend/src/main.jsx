@@ -19,7 +19,10 @@ function App() {
       <Route index element={<GetTextAll />}/>
     
       <Route path="/about" element={<About />}/>
-     
+      <Route path="/about/" element={<About />}/>
+
+      <Route path="*" element={<GetTextAll/>} />
+
      
       </Route>
     </Routes>

@@ -21,9 +21,9 @@ body {
 font-family: 'Montserrat', sans-serif;
 color: var(--charcoal);}
 
-.box {
+/* .box {
     background-color: var(--shoelace) !important;
-}
+} */
 
 
 .navbar-brand{
@@ -50,9 +50,7 @@ h1, h2, h3, p, ul, nav, li{
 .instruction{
     color: var(--blue-grey)
 }
-/* .card {
-background-color: rgb(209, 222, 235) !important;
-} */
+
 
 .pagination > .active > a
 {
@@ -79,17 +77,18 @@ div > h3 {
 }
 
 
-.container-sm {
+.about-box {
     width: 25% !important;
 }
 
+  
 
-@media (max-width: 1280px) {
-    .container-sm{
-        width: 100% !important;
-
+/* @media (max-width: 780px) {
+    .control-text {
+        width:50%;
     }
-}
+} */
+
 
 .contact{
     display:flex;
@@ -99,3 +98,5 @@ div > h3 {
 .reddit-bi{
     color:#FF5700 !important;
 }
+
+

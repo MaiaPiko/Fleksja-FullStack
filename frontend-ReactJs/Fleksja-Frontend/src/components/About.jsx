@@ -1,10 +1,45 @@
-
+import Box from "./Box";
 import Center from "./Center";
+import NavAboutPage from "./NavAboutPage";
 function About() {
+  const isNarrowScreen = window.matchMedia("(max-width: 1100px)").matches;
+
   return (
-    <div className="mt-5 pt-5">
+    <>
+    <NavAboutPage />
+      <div className="mt-5 pt-5">
       <Center>
-        <div className="container-sm m-1 p-3 shadow p-3 mb-5 bg-body rounded">
+        {isNarrowScreen ? (
+          <>
+      
+              <div >
+                <br />
+              
+                <div className="control-text">
+                  <Box>
+                    <div style={{ display: "grid", placeItems: "center" }}>
+                      <div className="container-fluid m-5 appfonts">
+                        <p className="ms-3 instruction">O Fleksji</p>
+                        <p className="ms-3">
+                          Fleksja została stworzona, aby pomóc uczącym się ćwiczyć polską gramatykę, wybierając poprawną formę każdego słowa. Pozycje w rozwijanym menu zostały wygenerowane przy użyciu{" "}
+                          <a href="http://morfeusz.sgjp.pl/">
+                            "Analizatora i generatora fleksyjnego Morfeusz 2”
+                          </a>
+                          . Wszystkie teksty pochodzą z polskich książek znajdujących się w domenie publicznej. Pełne teksty znajdują się na stronie{" "}
+                          <a href="https://wolnelektury.pl/">wolnelektury.pl/</a>.
+                        </p>
+                      </div>
+                    </div>
+                    {/* <Score correct={score} total={total} /> */}
+                   
+                  </Box>
+                </div>
+              </div>
+            
+          </>
+         ) : (
+          
+        <div className="about-box m-1 p-3 shadow p-3 mb-5 bg-body rounded">
           <br />
           <p className="ms-3 instruction">O Fleksji</p>
 
@@ -20,6 +55,7 @@ function About() {
             <a href="https://wolnelektury.pl/">wolnelektury.pl/</a>.
           </p>
         </div>
+        )}
         <div >
           <h3 className="contact">
             <a href="https://twitter.com/Maia_Creates">
@@ -52,10 +88,12 @@ function About() {
           </a>
           </h3>
           </div>
+      
+         
           </Center>
         </div>
      
-
+</>
   );
 }
 

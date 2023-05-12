@@ -9,6 +9,8 @@ function Pagination({ itemsPerPage, totalItems, currentPage, onPageChange }) {
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
+    const isNarrowScreen = window.matchMedia("(max-width: 1200px)").matches;
+
 
   return (
     <nav>
