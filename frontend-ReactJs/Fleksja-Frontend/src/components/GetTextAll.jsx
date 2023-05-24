@@ -23,7 +23,7 @@ const GetTextAll = () => {
   useEffect(() => {
     async function fetchPassages() {
       try {
-        const response = await fetch('/data.json'); 
+        const response = await fetch('http://127.0.0.1:8000/passages/'); 
         const data = await response.json();
         setPassages(shuffle(data));
       } catch (error) {
