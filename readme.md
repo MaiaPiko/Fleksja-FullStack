@@ -1,6 +1,6 @@
 # Fleksja
 
-![Demo](./Fleksja.webm)
+![Demo](./fleksja.webm)
 
 Fleksja is a web application created with a ReactJS front end and a Django-Rest-Framework backend. It is designed to provide Polish language exercises generated programmatically using Morfeusz2, a morphological analyzer and generator.
 
