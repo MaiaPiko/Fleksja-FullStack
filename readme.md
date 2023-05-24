@@ -20,4 +20,3 @@ Fleksja is a web application created with a ReactJS front end and a Django-Rest-
 
 The frontend design of the application was also a significant focus. The `useEffect` hook was utilized to fetch data asynchronously from a JSON file when the component mounts. The fetched data was then shuffled and stored in the `passages` state. A loop was used to wrap each paragraph in a `div` element, and React-Jsx-Parser was employed to dynamically render the parsed passages. Careful attention was paid to ensure responsiveness across different screens.
 
-Feel free to explore the codebase and contribute to the project!
